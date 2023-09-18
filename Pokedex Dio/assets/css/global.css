@@ -1,0 +1,41 @@
+/* Alterações em todos os elementos */
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/assets/images/city.png');
+    background-repeat: no-repeat; /* Evita repetir a imagem */
+    background-size: cover; 
+}
+
+
+/* Adiciona margem de acordo com a fonte do usuário */
+.content {
+    padding: 1rem;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Adiciona uma direção de coluna para alinhar o título ao topo */
+}
+
+
+/* Permite que o conjunto CSS tenha um padrão independente do tamanho da tela */
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: 100%;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        height: max-content;
+        background-image: url('/assets/images/city.png');
+        background-repeat: repeat-y; /* Repetir verticalmente */
+    }
+}
