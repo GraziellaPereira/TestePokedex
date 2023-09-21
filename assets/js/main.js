@@ -20,7 +20,7 @@ function loadPokemonItens(offset, maxRecords) {
     });
 }
 
-// Função para criar os botões de filtro de tipo
+// Função para criar os botões de filtro de tipo (não alterar)
 function createTypeFilterButtons(types) {
     const filterButtonsContainer = document.getElementById('type-filter-buttons');
 
@@ -28,49 +28,75 @@ function createTypeFilterButtons(types) {
         const button = document.createElement('button');
         button.textContent = type;
         button.className = 'filter-button';
-        button.setAttribute('data-type', type);
+        button.addEventListener('click', () => {
+            console.log('clicou')
+            filterPokemonByType(type);
+        });
         filterButtonsContainer.appendChild(button);
     });
 }
 
+
+// Adicione um ouvinte de evento para esperar a carga completa da página
+window.addEventListener('load', function() {
+    // Carregue os tipos disponíveis e crie os botões de filtro
+    fetchPokemonTypes()
+        .then((types) => {
+            createTypeFilterButtons(types);
+
+            // Após criar os botões, carregue todos os Pokémon
+            loadPokemonItens(offset, limit);
+        })
+        .catch((error) => {
+            console.error('Erro ao buscar tipos de Pokémon:', error);
+        });
+});
+
+
+
+
 // Função para filtrar Pokémon por tipo
 function filterPokemonByType(type) {
-        console.log('Tipo selecionado:', type);
+    const pokemonItems = document.querySelectorAll('.pokemon');
 
-    // Filtrar os Pokémon com base no tipo selecionado
-    const filteredPokemon = allPokemons.filter((pokemon) => {
-        return pokemon.types.includes(type);
-    });
+    pokemonItems.forEach((pokemonItem) => {
+        const types = Array.from(pokemonItem.querySelectorAll('.type')).map((typeElement) => typeElement.textContent);
 
-    // Limpar a lista atual de Pokémon na página
-    pokemonList.innerHTML = '';
-
-    // Adicionar os Pokémon filtrados de volta à lista na página
-    filteredPokemon.forEach((pokemon) => {
-        const li = convertPokemonToLi(pokemon);
-        pokemonList.innerHTML += li;
+        if (types.includes(type)) {
+            pokemonItem.style.display = 'block';
+        } else {
+            pokemonItem.style.display = 'none';
+        }
     });
 }
 
-
-// Carregue os tipos disponíveis e crie os botões de filtro
-fetchPokemonTypes()
-    .then((types) => {
-        createTypeFilterButtons(types);
-    });
 
 // Adicione um ouvinte de evento de clique aos botões de filtro de tipo
 const filterButtons = document.querySelectorAll('.filter-button');
 filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        const type = button.getAttribute('data-type');
-        console.log('Filtering by type:', type); // Add this line for debugging
+        const type = button.textContent;
         filterPokemonByType(type);
     });
 });
 
+// Seletor para o botão de Limpar Filtro
+const clearFilterButton = document.getElementById('clear-filter-button');
 
-// Pesquisar pokemons
+// Adicione um ouvinte de evento ao botão
+clearFilterButton.addEventListener('click', clearFilter);
+
+// Função para limpar o filtro e mostrar todos os Pokémon novamente
+function clearFilter() {
+    const pokemonItems = document.querySelectorAll('.pokemon');
+
+    pokemonItems.forEach((pokemonItem) => {
+        pokemonItem.style.display = 'block';
+    });
+}
+
+
+// Pesquisar pokemons (não alterar)
 const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', searchPokemon);
 
@@ -93,6 +119,7 @@ function searchPokemon() {
     });
 }
 
+// Lista Pokemon
 function convertPokemonToLi(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}" onclick="getPokemon(${pokemon.number})">
@@ -112,33 +139,6 @@ function convertPokemonToLi(pokemon) {
 }
 
 loadPokemonItens(offset, limit);
-
-// Seletor para os botões de filtro
-const filterButtonSelect = document.querySelectorAll('.filter-button');
-
-// Função para filtrar Pokémon por tipo
-function filterByType(type) {
-    allPokemons.forEach((pokemon) => {
-        const pokemonItem = document.querySelector(`.pokemon[data-pokemon-number="${pokemon.number}"]`);
-        
-        if (pokemonItem) {
-            if (pokemon.types.includes(type)) {
-                pokemonItem.style.display = 'block';
-            } else {
-                pokemonItem.style.display = 'none';
-            }
-        }
-    });
-}
-
-// Adicione um ouvinte de clique a cada botão de filtro
-filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const type = button.getAttribute('data-type');
-        filterByType(type);
-    });
-});
-
 
 
 
