@@ -20,6 +20,25 @@ function loadPokemonItens(offset, maxRecords) {
     });
 }
 
+// Lista Pokemon
+function convertPokemonToLi(pokemon) {
+    return `
+        <li class="pokemon ${pokemon.type}" onclick="getPokemon(${pokemon.number})">
+            <span class="number">#${pokemon.number}</span>
+            <span class="name">${pokemon.name}</span>
+
+            <div class="detail">
+                <ol class="types">
+                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                </ol>
+
+                <img src="${pokemon.photo}"
+                     alt="${pokemon.name}">
+            </div>
+        </li>
+    `
+}
+
 // Função para criar os botões de filtro de tipo (não alterar)
 function createTypeFilterButtons(types) {
     const filterButtonsContainer = document.getElementById('type-filter-buttons');
@@ -38,7 +57,8 @@ function createTypeFilterButtons(types) {
 
 
 // Adicione um ouvinte de evento para esperar a carga completa da página
-window.addEventListener('load', function() {
+window.addEventListener('load', function() { 
+ 
     // Carregue os tipos disponíveis e crie os botões de filtro
     fetchPokemonTypes()
         .then((types) => {
@@ -117,25 +137,6 @@ function searchPokemon() {
             pokemonItem.style.display = 'none';
         }
     });
-}
-
-// Lista Pokemon
-function convertPokemonToLi(pokemon) {
-    return `
-        <li class="pokemon ${pokemon.type}" onclick="getPokemon(${pokemon.number})">
-            <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
-
-            <div class="detail">
-                <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>
-
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
-            </div>
-        </li>
-    `
 }
 
 loadPokemonItens(offset, limit);

@@ -14,13 +14,12 @@ body {
 /* Adiciona margem de acordo com a fonte do usuário */
 .content {
     padding: 1rem;
-    background-color: white;
+    background-color: rgb(59, 58, 62);
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column; /* Adiciona uma direção de coluna para alinhar o título ao topo */
 }
-
 
 /* Permite que o conjunto CSS tenha um padrão independente do tamanho da tela */
 @media screen and (min-width: 992px) {

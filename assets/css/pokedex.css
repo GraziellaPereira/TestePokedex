@@ -11,16 +11,20 @@
     background-color: #a6a877;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .grass {
     background-color: #77c850;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
  
 }
 
@@ -28,128 +32,160 @@
     background-color: #ee7f30;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .water {
     background-color: #678fee;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .electric {
     background-color: #f7cf2e;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .ice {
     background-color: #98d5d7;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .ground {
     background-color: #dfbf69;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .flying {
     background-color: #a98ff0;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .poison {
     background-color: #a040a0;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .fighting {
     background-color: #bf3029;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .psychic {
     background-color: #f65687;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .dark {
     background-color: #725847;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .rock {
     background-color: #b8a137;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .bug {
     background-color: #a8b720;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .ghost {
     background-color: #6e5896;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .steel {
     background-color: #b9b7cf;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .dragon {
     background-color: #6f38f6;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 .fairy {
     background-color: #f9aec7;
     background-image: url('../images/pokeball.png');
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 170px;
+    background-position: right bottom;
+    padding-right: auto;
+    padding-left: auto;
+    background-size: 150px;
 }
 
 /* Estilização da caixa que contém os pokemons */
@@ -157,8 +193,9 @@
     display: flex;
     flex-direction: column;
 
+
     margin: .3rem;
-    padding: .3rem;
+    padding: .2rem;
     border-radius: 1rem;
 }
 
@@ -167,20 +204,24 @@
     margin-left: 1rem;
 }
 
+.pokemon .name {
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: .1rem;
+
+}
+
 /* Estilização do número da pokedex */
 .pokemon .number {
+    display: block;
+    text-align: right;
     color: #000;
     opacity: .350;
     margin-top: .5rem;
-    text-align: right;
     font-size: 1rem;
-}
-
-.pokemon .name {
-    text-transform: capitalize;
-    font-size: large;
-    color: #fff;
-    margin-bottom: .1rem;
 }
 
 /* Estilização dos detalhes dentro da caixa do pokemon */
@@ -228,15 +269,6 @@
     padding: 1rem;
 }
 
-.pagination button {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
-    color: #fff;
-    background-color: #6c79db;
-    border: none;
-    border-radius: 1rem;
-}
 
 @media screen and (min-width: 380px) {
     .pokemons {
@@ -255,3 +287,6 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
+
+
